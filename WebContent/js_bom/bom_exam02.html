@@ -5,15 +5,23 @@
 		<title>Insert title here</title>
 		<script type="text/javascript">
 			function join(){
-				
+				myid = document.id.num.value;
+				if(myid.length<4){
+					document.getElementById("result").innerHTML = "4글자 이상의 글자를 입력하세요.";
+				}else if(myid == "java"){
+					document.getElementById("result").innerHTML = "이미 사용중인 아이디입니다.";
+				}else{
+					document.getElementById("result").innerHTML = "좋은 아이디입니다.";
+				}
 			}
 		</script>
 	</head>
 	<body>
 		<h1>티몬 회원가입</h1>
 		<h3>필수 항목</h3>
-		<form name="id">
-			<input type="text" name="num" onkeyup="calc()">
+		<form name="id">	
+			아이디 : <input type="text" name="num" onkeyup="join()">
 		</form>
+		<p id="result" style="color:red"></p>
 	</body>
 </html>
