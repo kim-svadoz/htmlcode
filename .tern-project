@@ -27,6 +27,7 @@
     }
   },
   "libs": [
-    "browser"
+    "browser",
+    "jquery"
   ]
 }
