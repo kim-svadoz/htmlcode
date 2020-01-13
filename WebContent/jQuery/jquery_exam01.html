@@ -2,21 +2,65 @@
 
 <html>
 	<head>
-		<title>jquery</title> 
+		<title>jquery</title>
+		<link rel="stylesheet" href="../common/css/my_style2.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		/* 	$(document).ready(function(){
+				$("#img1").children().mouseover(function() {
+					size = $("img1").children().length;
+					for(i=0;i<size;i++){
+						$("#img1").children().last().remove();	
+					}
+					data = $("<p>방문자수 :"+ Math.floor(Math.random() *500 +1) +"</p>");
+					$("#img1").append(data);
+				});
+				$("#img2").children().mouseover(function() {
+					size = $("img2").children().length;
+					for(i=0;i<size;i++){
+						$("#img2").children().last().remove();	
+					}
+					data = $("<p>방문자수 :"+ Math.floor(Math.random() *500 +1) +"</p>");
+					$("#img2").append(data);
+				});
+				$("#img3").children().mouseover(function() {
+					size = $("img3").children().length;
+					for(i=0;i<size;i++){
+						$("#img3").children().last().remove();	
+					}
+					data = $("<p>방문자수 :"+ Math.floor(Math.random() *500 +1) +"</p>");
+					$("#img3").append(data);
+				});
+				$("#img4").children().mouseover(function() {
+					size = $("img4").children().length;
+					for(i=0;i<size;i++){
+						$("#img4").children().last().remove();	
+					}
+					data = $("<p>방문자수 :"+ Math.floor(Math.random() *500 +1) +"</p>");
+					$("#img4").append(data);
+				});
+			}); */
+		</script> 
 	</head> 
 	<body>
 		<div id="header">
 			<h2>아침고요수목원~</h2>
 		</div>
 		<div id="main">
-			<div class="gardenimg"><img src="../images/m_garden01.jpg" /></div>
-			<div class="gardenimg"><img src="../images/m_garden02.jpg"/></div>
-			<div class="gardenimg"><img src="../images/m_garden03.jpg"/></div>
-			<div class="gardenimg"><img src="../images/m_garden05.jpg"/></div>
+			<div class="gardenimg" id="img1"><img src="../images/m_garden01.jpg" /></div>
+			<div class="gardenimg" id="img2"><img src="../images/m_garden02.jpg"/></div>
+			<div class="gardenimg" id="img3"><img src="../images/m_garden03.jpg"/></div>
+			<div class="gardenimg" id="img4"><img src="../images/m_garden05.jpg"/></div>
 		</div>
-		
-		<script>
-		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".gardenimg").on("mouseover", function(){
+					$(".gardenimg p").remove();
+					count = Math.floor((Math.random()*10)+500);
+					data = $("<p>방문자수 :"+ count +"</p>");
+					$(this).append(data);
+				});
+			})
 		</script>
 	</body>
 </html>
